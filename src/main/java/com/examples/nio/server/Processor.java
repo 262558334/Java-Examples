@@ -10,9 +10,9 @@ import java.net.Socket;
 public class Processor {
     public static void process(Socket socket) {
         try {
+
             InputStream inputStream = socket.getInputStream();
             OutputStream outputStream = socket.getOutputStream();
-
             int data;
             while ((data = inputStream.read()) != -1) {
                 if (Character.isLetter(data)) {
@@ -22,6 +22,7 @@ public class Processor {
                 }
 
             }
+//            Thread.sleep(100000);
         }
         catch (Exception e){
             System.err.println("Processor error - "+e);
